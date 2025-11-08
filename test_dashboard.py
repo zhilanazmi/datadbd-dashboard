@@ -44,7 +44,7 @@ def test_dependencies():
         'plotly': 'plotly',
         'matplotlib': 'matplotlib',
         'seaborn': 'seaborn',
-        'anthropic': 'anthropic',
+        'google.generativeai': 'google-generativeai',
         'dotenv': 'python-dotenv'
     }
     
@@ -201,13 +201,13 @@ def test_ai_integration():
     print_header("TEST 6: AI Integration")
     
     try:
-        from utils_ai_integration import ClaudeDBDAnalyzer
+        from utils_ai_integration import GeminiDBDAnalyzer
         
-        api_key = os.getenv('ANTHROPIC_API_KEY')
+        api_key = os.getenv('GEMINI_API_KEY')
         
         if not api_key or api_key == 'your-api-key-here':
             print_warning("API Key not set - skipping AI tests")
-            print_info("Set ANTHROPIC_API_KEY in .env to test AI features")
+            print_info("Set GEMINI_API_KEY in .env to test AI features")
             return True
         
         from utils_parsing import DBDDataParser
@@ -216,8 +216,8 @@ def test_ai_integration():
         df = parser.load_csv()
         df_clean = parser.clean_data()
         
-        analyzer = ClaudeDBDAnalyzer(api_key=api_key)
-        print_success("ClaudeDBDAnalyzer initialized")
+        analyzer = GeminiDBDAnalyzer(api_key=api_key)
+        print_success("GeminiDBDAnalyzer initialized")
         
         # Test data preparation
         summary = analyzer.prepare_data_summary(df_clean)

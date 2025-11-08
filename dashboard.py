@@ -1,6 +1,6 @@
 """
 Dashboard Interaktif DBD Indonesia
-Menggunakan Streamlit dan Claude AI untuk Business Intelligence
+Menggunakan Streamlit dan Google Gemini AI untuk Business Intelligence
 """
 
 import streamlit as st
@@ -10,7 +10,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
 import seaborn as sns
-from anthropic import Anthropic
+import google.generativeai as genai
 import os
 from dotenv import load_dotenv
 import io
@@ -95,11 +95,13 @@ def analyze_data(df):
     }
     return analysis
 
-# Fungsi untuk mendapatkan insight dari Claude AI
+# Fungsi untuk mendapatkan insight dari Gemini AI
 def get_ai_insights(df, api_key):
-    """Generate AI insights menggunakan Claude Sonnet 4.0"""
+    """Generate AI insights menggunakan Google Gemini"""
     try:
-        client = Anthropic(api_key=api_key)
+        # Configure Gemini API
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel('gemini-2.5-flash')
         
         # Siapkan data summary untuk analisis
         summary_data = {
@@ -129,18 +131,11 @@ Berikan analisis dalam format berikut:
 Berikan dalam format yang mudah dibaca dan terstruktur dalam Bahasa Indonesia.
 """
         
-        message = client.messages.create(
-            model="claude-sonnet-4-20250514",
-            max_tokens=2048,
-            messages=[
-                {"role": "user", "content": prompt}
-            ]
-        )
-        
-        return message.content[0].text
+        response = model.generate_content(prompt)
+        return response.text
     
     except Exception as e:
-        return f"Error saat menghasilkan AI insights: {str(e)}\n\nPastikan API Key Claude sudah diset dengan benar."
+        return f"Error saat menghasilkan AI insights: {str(e)}\n\nPastikan API Key Gemini sudah diset dengan benar."
 
 # Fungsi untuk membuat grafik trend
 def create_trend_chart(df, selected_provinces=None):
@@ -451,23 +446,23 @@ def main():
         with tab3:
             st.header("🤖 AI Insights & Rekomendasi")
             st.markdown("""
-            Gunakan kekuatan Claude Sonnet 4.0 untuk mendapatkan insight mendalam dan rekomendasi 
+            Gunakan kekuatan Google Gemini 1.5 Pro untuk mendapatkan insight mendalam dan rekomendasi 
             berdasarkan analisis data DBD.
             """)
             
             # Input API Key
             api_key = st.text_input(
-                "🔑 Masukkan Anthropic API Key",
+                "🔑 Masukkan Google Gemini API Key",
                 type="password",
-                help="Dapatkan API key dari https://console.anthropic.com/",
-                value=os.getenv('ANTHROPIC_API_KEY', '')
+                help="Dapatkan API key dari https://aistudio.google.com/app/apikey",
+                value=os.getenv('GEMINI_API_KEY', '')
             )
             
             if st.button("🚀 Generate AI Insights", type="primary", use_container_width=True):
                 if not api_key:
                     st.error("❌ Silakan masukkan API Key terlebih dahulu")
                 else:
-                    with st.spinner("🤖 Claude AI sedang menganalisis data..."):
+                    with st.spinner("🤖 Gemini AI sedang menganalisis data..."):
                         insights = get_ai_insights(df_filtered, api_key)
                         
                         st.markdown('<div class="insight-box">', unsafe_allow_html=True)
@@ -627,7 +622,7 @@ def main():
     st.markdown("---")
     st.markdown("""
     <div style='text-align: center; color: #666; padding: 2rem;'>
-        <p>Dashboard DBD Indonesia | Powered by Streamlit & Claude AI (Sonnet 4.0)</p>
+        <p>Dashboard DBD Indonesia | Powered by Streamlit & Google Gemini AI</p>
         <p style='font-size: 0.9rem;'>Dibuat untuk analisis dan monitoring kasus Demam Berdarah Dengue di Indonesia</p>
     </div>
     """, unsafe_allow_html=True)

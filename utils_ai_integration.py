@@ -1,31 +1,31 @@
 """
-Utility Functions untuk Integrasi dengan Claude AI (Sonnet 4.0)
+Utility Functions untuk Integrasi dengan Google Gemini AI
 Untuk Business Intelligence dan Analisis Data DBD
 """
 
 import pandas as pd
-from anthropic import Anthropic
+import google.generativeai as genai
 import json
 from typing import Dict, List, Optional, Tuple
 import os
 from datetime import datetime
 
 
-class ClaudeDBDAnalyzer:
+class GeminiDBDAnalyzer:
     """
-    Class untuk analisis data DBD menggunakan Claude AI
+    Class untuk analisis data DBD menggunakan Google Gemini AI
     """
     
-    def __init__(self, api_key: str, model: str = "claude-sonnet-4-20250514"):
+    def __init__(self, api_key: str, model: str = "gemini-2.5-flash"):
         """
         Inisialisasi analyzer dengan API key
         
         Args:
-            api_key: Anthropic API key
-            model: Model Claude yang digunakan
+            api_key: Google Gemini API key
+            model: Model Gemini yang digunakan
         """
-        self.client = Anthropic(api_key=api_key)
-        self.model = model
+        genai.configure(api_key=api_key)
+        self.model = genai.GenerativeModel(model)
         self.conversation_history = []
     
     def prepare_data_summary(self, df: pd.DataFrame) -> Dict:
@@ -161,16 +161,8 @@ Gunakan data konkret, berikan angka spesifik, dan pastikan rekomendasi praktis d
 """
         
         try:
-            message = self.client.messages.create(
-                model=self.model,
-                max_tokens=4096,
-                temperature=0.7,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            
-            insights = message.content[0].text
+            response = self.model.generate_content(prompt)
+            insights = response.text
             
             # Save to history
             self.conversation_history.append({
@@ -253,16 +245,8 @@ Berikan rekomendasi yang spesifik, terukur, achievable, relevant, dan time-bound
 """
         
         try:
-            message = self.client.messages.create(
-                model=self.model,
-                max_tokens=3072,
-                temperature=0.7,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            
-            recommendations = message.content[0].text
+            response = self.model.generate_content(prompt)
+            recommendations = response.text
             
             self.conversation_history.append({
                 'timestamp': datetime.now().isoformat(),
@@ -359,16 +343,8 @@ Berikan analisis yang kontekstual dan actionable.
 """
         
         try:
-            message = self.client.messages.create(
-                model=self.model,
-                max_tokens=2560,
-                temperature=0.7,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            
-            analysis = message.content[0].text
+            response = self.model.generate_content(prompt)
+            analysis = response.text
             
             self.conversation_history.append({
                 'timestamp': datetime.now().isoformat(),
@@ -458,16 +434,8 @@ Berikan insight yang data-driven dan actionable.
 """
         
         try:
-            message = self.client.messages.create(
-                model=self.model,
-                max_tokens=2560,
-                temperature=0.7,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            
-            comparison = message.content[0].text
+            response = self.model.generate_content(prompt)
+            comparison = response.text
             
             self.conversation_history.append({
                 'timestamp': datetime.now().isoformat(),
@@ -561,16 +529,8 @@ Buat report yang concise, data-driven, dan actionable. Hindari jargon teknis yan
 """
         
         try:
-            message = self.client.messages.create(
-                model=self.model,
-                max_tokens=3584,
-                temperature=0.5,
-                messages=[
-                    {"role": "user", "content": prompt}
-                ]
-            )
-            
-            report = message.content[0].text
+            response = self.model.generate_content(prompt)
+            report = response.text
             
             self.conversation_history.append({
                 'timestamp': datetime.now().isoformat(),
@@ -602,11 +562,11 @@ Buat report yang concise, data-driven, dan actionable. Hindari jargon teknis yan
 # Contoh penggunaan
 if __name__ == "__main__":
     # Setup
-    api_key = os.getenv('ANTHROPIC_API_KEY', 'your-api-key-here')
+    api_key = os.getenv('GEMINI_API_KEY', 'your-api-key-here')
     
     if api_key == 'your-api-key-here':
-        print("⚠️  Set ANTHROPIC_API_KEY di environment variable atau ganti 'your-api-key-here'")
-        print("    Contoh: export ANTHROPIC_API_KEY='sk-ant-...'")
+        print("⚠️  Set GEMINI_API_KEY di environment variable atau ganti 'your-api-key-here'")
+        print("    Contoh: export GEMINI_API_KEY='AIzaSy...'")
         exit(1)
     
     # Load data
@@ -618,8 +578,8 @@ if __name__ == "__main__":
     df_clean = parser.clean_data()
     
     # Inisialisasi AI analyzer
-    print("\nInisialisasi Claude AI Analyzer...")
-    analyzer = ClaudeDBDAnalyzer(api_key=api_key)
+    print("\nInisialisasi Gemini AI Analyzer...")
+    analyzer = GeminiDBDAnalyzer(api_key=api_key)
     
     # Contoh 1: Comprehensive Insights
     print("\n" + "=" * 70)
