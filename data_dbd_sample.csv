@@ -1,0 +1,74 @@
+kode_provinsi,nama_provinsi,kode_kabupaten_kota,nama_kabupaten_kota,jumlah_kasus,satuan,tahun
+11,Aceh,1101,Kab. Simeulue,45,Kasus,2020
+11,Aceh,1101,Kab. Simeulue,52,Kasus,2021
+11,Aceh,1101,Kab. Simeulue,38,Kasus,2022
+11,Aceh,1101,Kab. Simeulue,61,Kasus,2023
+11,Aceh,1102,Kab. Aceh Singkil,78,Kasus,2020
+11,Aceh,1102,Kab. Aceh Singkil,89,Kasus,2021
+11,Aceh,1102,Kab. Aceh Singkil,95,Kasus,2022
+11,Aceh,1102,Kab. Aceh Singkil,112,Kasus,2023
+11,Aceh,1171,Kota Banda Aceh,234,Kasus,2020
+11,Aceh,1171,Kota Banda Aceh,267,Kasus,2021
+11,Aceh,1171,Kota Banda Aceh,298,Kasus,2022
+11,Aceh,1171,Kota Banda Aceh,321,Kasus,2023
+12,Sumatera Utara,1201,Kab. Nias,56,Kasus,2020
+12,Sumatera Utara,1201,Kab. Nias,64,Kasus,2021
+12,Sumatera Utara,1201,Kab. Nias,71,Kasus,2022
+12,Sumatera Utara,1201,Kab. Nias,83,Kasus,2023
+12,Sumatera Utara,1271,Kota Medan,456,Kasus,2020
+12,Sumatera Utara,1271,Kota Medan,523,Kasus,2021
+12,Sumatera Utara,1271,Kota Medan,601,Kasus,2022
+12,Sumatera Utara,1271,Kota Medan,678,Kasus,2023
+13,Sumatera Barat,1301,Kab. Kepulauan Mentawai,34,Kasus,2020
+13,Sumatera Barat,1301,Kab. Kepulauan Mentawai,41,Kasus,2021
+13,Sumatera Barat,1301,Kab. Kepulauan Mentawai,38,Kasus,2022
+13,Sumatera Barat,1301,Kab. Kepulauan Mentawai,45,Kasus,2023
+13,Sumatera Barat,1371,Kota Padang,345,Kasus,2020
+13,Sumatera Barat,1371,Kota Padang,389,Kasus,2021
+13,Sumatera Barat,1371,Kota Padang,412,Kasus,2022
+13,Sumatera Barat,1371,Kota Padang,456,Kasus,2023
+31,DKI Jakarta,3171,Kota Jakarta Pusat,789,Kasus,2020
+31,DKI Jakarta,3171,Kota Jakarta Pusat,856,Kasus,2021
+31,DKI Jakarta,3171,Kota Jakarta Pusat,923,Kasus,2022
+31,DKI Jakarta,3171,Kota Jakarta Pusat,1012,Kasus,2023
+31,DKI Jakarta,3172,Kota Jakarta Utara,654,Kasus,2020
+31,DKI Jakarta,3172,Kota Jakarta Utara,721,Kasus,2021
+31,DKI Jakarta,3172,Kota Jakarta Utara,798,Kasus,2022
+31,DKI Jakarta,3172,Kota Jakarta Utara,867,Kasus,2023
+31,DKI Jakarta,3173,Kota Jakarta Barat,723,Kasus,2020
+31,DKI Jakarta,3173,Kota Jakarta Barat,812,Kasus,2021
+31,DKI Jakarta,3173,Kota Jakarta Barat,889,Kasus,2022
+31,DKI Jakarta,3173,Kota Jakarta Barat,945,Kasus,2023
+32,Jawa Barat,3201,Kab. Bogor,567,Kasus,2020
+32,Jawa Barat,3201,Kab. Bogor,623,Kasus,2021
+32,Jawa Barat,3201,Kab. Bogor,689,Kasus,2022
+32,Jawa Barat,3201,Kab. Bogor,754,Kasus,2023
+32,Jawa Barat,3273,Kota Bandung,892,Kasus,2020
+32,Jawa Barat,3273,Kota Bandung,967,Kasus,2021
+32,Jawa Barat,3273,Kota Bandung,1045,Kasus,2022
+32,Jawa Barat,3273,Kota Bandung,1123,Kasus,2023
+33,Jawa Tengah,3301,Kab. Cilacap,234,Kasus,2020
+33,Jawa Tengah,3301,Kab. Cilacap,267,Kasus,2021
+33,Jawa Tengah,3301,Kab. Cilacap,298,Kasus,2022
+33,Jawa Tengah,3301,Kab. Cilacap,321,Kasus,2023
+33,Jawa Tengah,3371,Kota Semarang,678,Kasus,2020
+33,Jawa Tengah,3371,Kota Semarang,734,Kasus,2021
+33,Jawa Tengah,3371,Kota Semarang,801,Kasus,2022
+33,Jawa Tengah,3371,Kota Semarang,876,Kasus,2023
+35,Jawa Timur,3501,Kab. Pacitan,123,Kasus,2020
+35,Jawa Timur,3501,Kab. Pacitan,145,Kasus,2021
+35,Jawa Timur,3501,Kab. Pacitan,167,Kasus,2022
+35,Jawa Timur,3501,Kab. Pacitan,189,Kasus,2023
+35,Jawa Timur,3578,Kota Surabaya,945,Kasus,2020
+35,Jawa Timur,3578,Kota Surabaya,1034,Kasus,2021
+35,Jawa Timur,3578,Kota Surabaya,1123,Kasus,2022
+35,Jawa Timur,3578,Kota Surabaya,1234,Kasus,2023
+51,Bali,5101,Kab. Jembrana,156,Kasus,2020
+51,Bali,5101,Kab. Jembrana,178,Kasus,2021
+51,Bali,5101,Kab. Jembrana,201,Kasus,2022
+51,Bali,5101,Kab. Jembrana,234,Kasus,2023
+51,Bali,5171,Kota Denpasar,456,Kasus,2020
+51,Bali,5171,Kota Denpasar,512,Kasus,2021
+51,Bali,5171,Kota Denpasar,567,Kasus,2022
+51,Bali,5171,Kota Denpasar,623,Kasus,2023
+
