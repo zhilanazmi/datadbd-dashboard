@@ -27,6 +27,7 @@ class GeminiDBDAnalyzer:
         genai.configure(api_key=api_key)
         self.model = genai.GenerativeModel(model)
         self.conversation_history = []
+        self.model_name = model
     
     def prepare_data_summary(self, df: pd.DataFrame) -> Dict:
         """
