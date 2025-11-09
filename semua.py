@@ -52,7 +52,7 @@ for code in KODE_KABUPATEN_KOTA:
 # --- CUSTOM CSS (Global untuk kedua halaman) ---
 st.markdown("""
     <style>
-    /* ... CSS Anda tidak berubah ... */
+    /* ... Semua CSS Anda sebelumnya ... */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     
     * {
@@ -60,13 +60,13 @@ st.markdown("""
     }
     
     /* Hide Streamlit branding */
-    #MainMenu {visibility: hidden;}
+    MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     .stDeployButton {display: none;}
     
     /* Main Container */
     .main {
-        background: #f5f7fa;
+        background: #f5f7fa; /* Aturan dasar Anda */
     }
     
     .block-container {
@@ -78,7 +78,7 @@ st.markdown("""
     /* Header */
     .main-header {
         font-size: 2.5rem;
-        color: #1e293b;
+        color: #1e293b; /* Aturan dasar Anda */
         text-align: center;
         font-weight: 700;
         margin-bottom: 0.5rem;
@@ -87,7 +87,7 @@ st.markdown("""
     
     .subtitle {
         text-align: center;
-        color: #64748b;
+        color: #64748b; /* Aturan dasar Anda */
         font-size: 1rem;
         margin-bottom: 2rem;
     }
@@ -131,6 +131,7 @@ st.markdown("""
         font-weight: 500;
         font-size: 0.9375rem;
         transition: all 0.2s ease;
+        color: #4b5563; /* <-- PERBAIKAN: Menambahkan warna default */
     }
     
     .stTabs [data-baseweb="tab"]:hover {
@@ -213,7 +214,7 @@ st.markdown("""
         background: #1e293b !important;
     }
     
-    /* Semua teks di sidebar harus putih dan readable */
+    /* ... semua aturan sidebar Anda lainnya (tetap sama) ... */
     [data-testid="stSidebar"] p,
     [data-testid="stSidebar"] span:not([class*="baseweb"]):not([class*="st"]),
     [data-testid="stSidebar"] h1,
@@ -225,8 +226,6 @@ st.markdown("""
     [data-testid="stSidebar"] small {
         color: white !important;
     }
-    
-    /* Markdown content di sidebar */
     [data-testid="stSidebar"] [data-testid="stMarkdownContainer"],
     [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
     [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] span,
@@ -237,18 +236,12 @@ st.markdown("""
     [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] h4 {
         color: white !important;
     }
-    
-    /* --- MODIFIKASI: .stMetric label dihapus dari daftar ini --- */
     [data-testid="stSidebar"] .stSelectbox label,
     [data-testid="stSidebar"] .stMultiSelect label,
     [data-testid="stSidebar"] .stFileUploader label {
         color: white !important;
         font-weight: 500;
     }
-    
-    /* --- MODIFIKASI: 2 blok untuk .stMetric [data-testid="stMetricValue"] dihapus dari sini --- */
-    
-    /* Tombol di Sidebar (cth: Logout, Filter) */
     [data-testid="stSidebar"] .stButton > button {
         background: rgba(255,255,255,0.1) !important;
         color: white !important;
@@ -257,18 +250,14 @@ st.markdown("""
         padding: 0.5rem 0.75rem !important;
         border-radius: 6px !important;
     }
-    
-    /* Tombol Logout (dibuat lebih menonjol) */
     [data-testid="stSidebar"] .stButton > button[kind="secondary"] {
         padding: 0.625rem 1.5rem !important;
         font-size: 0.9375rem !important;
         font-weight: 600 !important;
     }
-    
     [data-testid="stSidebar"] .stButton > button:hover {
         background: rgba(255,255,255,0.15) !important;
     }
-    
     [data-testid="stSidebar"] .stSelectbox > div > div,
     [data-testid="stSidebar"] .stMultiSelect > div > div {
         background: rgba(59, 130, 246, 0.3) !important;
@@ -276,56 +265,46 @@ st.markdown("""
         color: white !important;
         border-radius: 6px !important;
     }
-    
     [data-testid="stSidebar"] .stSelectbox > div > div:hover,
     [data-testid="stSidebar"] .stMultiSelect > div > div:hover {
         background: rgba(59, 130, 246, 0.4) !important;
         border-color: rgba(59, 130, 246, 0.6) !important;
     }
-    
     [data-testid="stSidebar"] .stSelectbox > div > div:focus,
     [data-testid="stSidebar"] .stMultiSelect > div > div:focus {
         background: rgba(59, 130, 246, 0.4) !important;
         border-color: rgba(59, 130, 246, 0.7) !important;
     }
-    
     [data-testid="stSidebar"] .stSelectbox > div > div > div,
     [data-testid="stSidebar"] .stMultiSelect > div > div > div {
         color: white !important;
     }
-    
     [data-testid="stSidebar"] .stTextInput > div > div > input {
         background: rgba(59, 130, 246, 0.3) !important;
         border: 1px solid rgba(59, 130, 246, 0.5) !important;
         color: white !important;
         border-radius: 6px !important;
     }
-    
     [data-testid="stSidebar"] .stTextInput > div > div > input:focus {
         background: rgba(59, 130, 246, 0.4) !important;
         border-color: rgba(59, 130, 246, 0.7) !important;
     }
-    
     [data-testid="stSidebar"] .stTextInput > div > div > input::placeholder {
         color: rgba(255,255,255,0.6) !important;
     }
-    
     [data-testid="stSidebar"] .stMultiSelect [data-baseweb="tag"] {
         background: rgba(59, 130, 246, 0.4) !important;
         color: white !important;
         border: 1px solid rgba(59, 130, 246, 0.6) !important;
     }
-    
     [data-testid="stSidebar"] .stFileUploader {
         background: rgba(255,255,255,0.05) !important;
         border: 2px dashed rgba(255,255,255,0.3) !important;
         border-radius: 8px !important;
     }
-    
     [data-testid="stSidebar"] .stFileUploader [data-testid="stMarkdownContainer"] {
         color: white !important;
     }
-    
     [data-testid="stSidebar"] .stInfo,
     [data-testid="stSidebar"] .stSuccess,
     [data-testid="stSidebar"] .stWarning,
@@ -333,22 +312,82 @@ st.markdown("""
         background: rgba(255,255,255,0.1) !important;
         color: white !important;
     }
-    
     [data-testid="stSidebar"] .stInfo *,
     [data-testid="stSidebar"] .stSuccess *,
     [data-testid="stSidebar"] .stWarning *,
     [data-testid="stSidebar"] .stError * {
         color: white !important;
     }
-    
     [data-testid="stSidebar"]::-webkit-scrollbar {
         width: 6px;
     }
-    
     [data-testid="stSidebar"]::-webkit-scrollbar-thumb {
         background: rgba(255,255,255,0.2);
         border-radius: 3px;
     }
+    
+    /* --- AWAL PERBAIKAN: PAKSA LIGHT MODE --- */
+    /* Ini adalah aturan baru yang "melawan" [data-theme="dark"] milik Streamlit */
+
+    [data-theme="dark"] .main {
+        background: #f5f7fa !important;
+    }
+    
+    [data-theme="dark"] .main-header {
+        color: #1e293b !important;
+    }
+    
+    [data-theme="dark"] .subtitle {
+        color: #64748b !important;
+    }
+    
+    /* Paksa semua teks markdown di area .main */
+    [data-theme="dark"] .main [data-testid="stMarkdownContainer"] p,
+    [data-theme="dark"] .main [data-testid="stMarkdownContainer"] li,
+    [data-theme="dark"] .main [data-testid="stMarkdownContainer"] h1,
+    [data-theme="dark"] .main [data-testid="stMarkdownContainer"] h2,
+    [data-testid="stMarkdownContainer"] h3,
+    [data-testid="stMarkdownContainer"] h4,
+    [data-testid="stMarkdownContainer"] {
+        color: #1e293b !important;
+    }
+
+    /* Paksa teks di dalam tabel (DataFrame) */
+    [data-theme="dark"] .stDataFrame {
+        color: #1e293b !important;
+    }
+    [data-theme="dark"] .stDataFrame [data-testid="stDataGridColHeader"] div {
+        color: #1e293b !important;
+    }
+    [data-theme="dark"] .stDataFrame [data-testid="stDataGridCell"] {
+         color: #1e293b !important;
+    }
+
+    /* Paksa warna latar belakang dan teks di data editor */
+    [data-theme="dark"] .stDataEditor {
+        background: #ffffff !important;
+        color: #1e293b !important;
+    }
+    [data-theme="dark"] .stDataEditor [data-testid="stDataGridCell"] {
+         color: #1e293b !important;
+    }
+    [data-theme="dark"] .stDataEditor [data-testid="stDataGridColHeader"] div {
+        color: #1e293b !important;
+    }
+    
+    /* --- TAMBAHAN PERBAIKAN UNTUK TABS --- */
+    [data-theme="dark"] .stTabs [data-baseweb="tab-list"] {
+        background: #f8fafc !important;
+    }
+    [data-theme="dark"] .stTabs [data-baseweb="tab"]:not([aria-selected="true"]) {
+        color: #4b5563 !important; 
+    }
+    [data-theme="dark"] .stTabs [data-baseweb="tab"]:not([aria-selected="true"]):hover {
+        background: #e2e8f0 !important;
+        color: #1e293b !important;
+    }
+    /* --- AKHIR PERBAIKAN --- */
+    
     </style>
 """, unsafe_allow_html=True)
 
@@ -587,9 +626,10 @@ def create_trend_chart(df, selected_kabkots=None):
     
     fig.update_layout(
         xaxis=dict(tickmode='linear'),
-        hovermode='x unified',
+        # hovermode 'x unified' diubah menjadi 'closest'
+        hovermode='closest', 
         legend=dict(orientation="v", yanchor="top", y=1, xanchor="left", x=1.02)
-    )
+     )
     
     return fig
 
@@ -786,25 +826,6 @@ def render_dashboard():
             top_kabkots_table.insert(0, 'Rank', range(1, len(top_kabkots_table) + 1))
             st.dataframe(top_kabkots_table, use_container_width=True, hide_index=True)
             
-            st.markdown("---")
-            
-            # Detail data table
-            st.subheader("📄 Data Detail")
-            st.dataframe(
-                df_filtered,
-                use_container_width=True,
-                height=400,
-                column_config={
-                    "jumlah_kasus": st.column_config.NumberColumn(
-                        "Jumlah Kasus",
-                        format="%d"
-                    ),
-                    "tahun": st.column_config.NumberColumn(
-                        "Tahun",
-                        format="%d"
-                    )
-                }
-            )
         
         # TAB 2: Visualisasi & Analisis
         with tab2:
@@ -812,14 +833,10 @@ def render_dashboard():
             
             # --- MODIFIKASI ---: Trend Chart diubah ke level kab/kota
             st.subheader("📊 Trend Kasus DBD per Tahun")
-            trend_kabkots = st.multiselect(
-                "Pilih kabupaten/kota (kosongkan untuk semua)",
-                options=sorted(df_filtered['nama_kabupaten_kota'].unique()),
-                default=None,
-                key='trend_kabkots'
-            )
-            trend_fig = create_trend_chart(df_filtered, trend_kabkots if trend_kabkots else None)
+            # Langsung buat chart tanpa filter
+            trend_fig = create_trend_chart(df_filtered, None)
             st.plotly_chart(trend_fig, use_container_width=True)
+
             
             st.markdown("---")
             
