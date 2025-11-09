@@ -1,0 +1,73 @@
+timestamp,username,action,details
+2025-11-08 23:40:00,admin3201,LOGIN,Admin 'admin3201' berhasil login.
+2025-11-08 23:40:22,admin3201,UPDATE,"Memperbarui baris (id: 217, wilayah: KABUPATEN BOGOR). Perubahan: {'jumlah_kasus': 3405}"
+2025-11-08 23:40:29,admin3201,LOGOUT,Admin 'admin3201' logout.
+2025-11-08 23:40:32,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 00:05:14,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 00:05:24,masteradmin,LOGOUT,Admin 'masteradmin' logout.
+2025-11-09 00:07:35,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 00:07:43,masteradmin,LOGOUT,Admin 'masteradmin' logout.
+2025-11-09 13:26:02,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 13:26:25,masteradmin,LOGOUT,Admin 'masteradmin' logout.
+2025-11-09 13:26:30,admin3201,LOGIN,Admin 'admin3201' berhasil login.
+2025-11-09 13:26:45,admin3201,LOGOUT,Admin 'admin3201' logout.
+2025-11-09 13:49:03,user,LOGIN,Pengguna 'user' (User) berhasil login.
+2025-11-09 13:49:40,user,LOGOUT,Pengguna 'user' logout.
+2025-11-09 13:49:50,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 13:50:03,masteradmin,LOGOUT,Pengguna 'masteradmin' logout.
+2025-11-09 13:50:11,user,LOGIN,Pengguna 'user' (User) berhasil login.
+2025-11-09 14:00:04,user,LOGIN,Pengguna 'user' (User) berhasil login.
+2025-11-09 14:06:38,user,LOGIN,Pengguna 'user' (User) berhasil login.
+2025-11-09 14:13:54,user,LOGIN,Pengguna 'user' (User) berhasil login.
+2025-11-09 14:14:32,user,LOGIN,Pengguna 'user' (User) berhasil login.
+2025-11-09 14:16:03,user,LOGIN,Pengguna 'user' (User) berhasil login.
+2025-11-09 14:18:53,user,LOGIN,Pengguna 'user' (User) berhasil login.
+2025-11-09 14:23:25,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:23:34,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:28:24,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:30:11,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:30:47,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:31:02,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:31:18,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:35:46,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:45:16,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:46:13,guest,LOGOUT,Pengguna 'guest' logout.
+2025-11-09 14:46:20,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 14:46:34,masteradmin,LOGOUT,Pengguna 'masteradmin' logout.
+2025-11-09 14:46:35,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 14:46:52,guest,LOGOUT,Pengguna 'guest' logout.
+2025-11-09 14:46:58,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 14:47:19,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 14:52:12,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 14:52:34,masteradmin,LOGOUT,Pengguna 'masteradmin' logout.
+2025-11-09 14:52:35,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 15:04:32,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:04:51,masteradmin,UPDATE,"Memperbarui baris (id: 243, wilayah: KOTA BANJAR). Perubahan: {'jumlah_kasus': 4000}"
+2025-11-09 15:04:58,masteradmin,LOGOUT,Pengguna 'masteradmin' logout.
+2025-11-09 15:05:02,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 15:05:26,guest,LOGOUT,Pengguna 'guest' logout.
+2025-11-09 15:05:34,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:05:42,masteradmin,UPDATE,"Memperbarui baris (id: 243, wilayah: KOTA BANJAR). Perubahan: {'jumlah_kasus': 400}"
+2025-11-09 15:05:51,masteradmin,LOGOUT,Pengguna 'masteradmin' logout.
+2025-11-09 15:09:24,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:12:44,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:13:09,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:13:33,masteradmin,UPDATE,"Memperbarui baris (id: 2, wilayah: KABUPATEN SUKABUMI). Perubahan: {'jumlah_kasus': 8544444}"
+2025-11-09 15:13:44,masteradmin,LOGOUT,Pengguna 'masteradmin' logout.
+2025-11-09 15:13:46,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 15:17:17,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:18:14,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:18:42,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 15:18:53,guest,LOGOUT,Pengguna 'guest' logout.
+2025-11-09 15:19:04,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:19:15,masteradmin,UPDATE,"Memperbarui baris (id: 2, wilayah: KABUPATEN SUKABUMI). Perubahan: {'jumlah_kasus': 854}"
+2025-11-09 15:19:20,masteradmin,LOGOUT,Pengguna 'masteradmin' logout.
+2025-11-09 15:19:22,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 15:19:32,guest,LOGOUT,Pengguna 'guest' logout.
+2025-11-09 15:19:55,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:20:22,masteradmin,DELETE,"Menghapus baris (id: 243, wilayah: KOTA BANJAR, tahun: 2024)"
+2025-11-09 15:20:48,guest,LOGIN,Pengguna 'guest' berhasil login.
+2025-11-09 15:21:06,guest,LOGOUT,Pengguna 'guest' logout.
+2025-11-09 15:21:12,masteradmin,LOGIN,Admin 'masteradmin' berhasil login.
+2025-11-09 15:21:21,masteradmin,LOGOUT,Pengguna 'masteradmin' logout.
+2025-11-09 15:21:22,guest,LOGIN,Pengguna 'guest' berhasil login.
