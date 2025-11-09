@@ -1033,13 +1033,22 @@ def main():
             
             st.markdown("---")
             
-            # Input API Key
-            api_key = st.text_input(
-                "🔑 Google Gemini API Key",
-                type="password",
-                help="Dapatkan API key dari https://aistudio.google.com/app/apikey",
-                value=os.getenv('GEMINI_API_KEY', '')
-            )
+            # Get API Key from environment variable
+            api_key = os.getenv('GEMINI_API_KEY', '')
+            
+            if not api_key:
+                st.warning("""
+                ⚠️ **API Key Gemini belum di-set!**
+                
+                Silakan set environment variable `GEMINI_API_KEY` terlebih dahulu.
+                
+                **Cara setup:**
+                1. Buat file `.env` di root project
+                2. Tambahkan: `GEMINI_API_KEY=your_api_key_here`
+                3. Atau set di system environment variable
+                
+                Dapatkan API Key di: https://aistudio.google.com/app/apikey
+                """)
             
             # Data Summary
             st.subheader("📊 Data yang Akan Dianalisis")
@@ -1074,15 +1083,16 @@ def main():
             if generate_btn:
                 if not api_key:
                     st.error("""
-                    ❌ **API Key Belum Diisi!**
+                    ❌ **API Key Belum Di-set!**
                     
-                    Silakan masukkan Google Gemini API Key terlebih dahulu.
+                    Silakan set environment variable `GEMINI_API_KEY` terlebih dahulu.
                     
-                    **Cara mendapatkan API Key:**
-                    1. Kunjungi: https://aistudio.google.com/app/apikey
-                    2. Login dengan Google account
-                    3. Klik "Create API Key"
-                    4. Copy dan paste di field di atas
+                    **Cara setup:**
+                    1. Buat file `.env` di root project
+                    2. Tambahkan: `GEMINI_API_KEY=your_api_key_here`
+                    3. Restart aplikasi Streamlit
+                    
+                    Dapatkan API Key di: https://aistudio.google.com/app/apikey
                     """)
                 else:
                     # Progress indicator
@@ -1162,10 +1172,11 @@ def main():
                         {str(e)}
                         
                         **Troubleshooting:**
-                        1. Pastikan API Key valid dan aktif
-                        2. Cek koneksi internet
-                        3. Cek quota API di Google AI Studio
-                        4. Coba lagi dalam beberapa saat
+                        1. Pastikan `GEMINI_API_KEY` sudah di-set di environment variable
+                        2. Pastikan API Key valid dan aktif
+                        3. Cek koneksi internet
+                        4. Cek quota API di Google AI Studio
+                        5. Coba lagi dalam beberapa saat
                         """)
             
             # Display saved insights if available
